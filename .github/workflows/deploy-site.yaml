@@ -1,57 +1,35 @@
-name: Publish Blog
+name: GitHub Pages
 
-on: push
+on:
+  push:
+    branches:
+      - main  # Triggers deployment when pushing to main
+  pull_request:
 
 jobs:
   deploy:
-
     runs-on: ubuntu-22.04
-
+    permissions:
+      contents: write
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
     steps:
-
-      # CHEKCOUT REPOSITORY
-
-      - name: Git checkout
-        uses: actions/checkout@v3
-
-      # SETUP HUGO
-
-      # Read environemnt variable for subsequent actions.
-      # See: https://docs.github.com/en/actions/using-workflows/workflow-commands-for-github-actions#setting-an-environment-variable 
-      - name: Read .env
-        run: |
-          . ./.env
-          echo "HUGO_VERSION=${HUGO_VERSION}" >> $GITHUB_ENV          
+      - uses: actions/checkout@v3
+        with:
+          submodules: true  # Ensures submodules are checked out, important for Hugo themes
+          fetch-depth: 0    # Fetches all history needed for .GitInfo and .Lastmod
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
-          hugo-version: '${{ env.HUGO_VERSION }}'
-          extended: true
+          hugo-version: '0.110.0'  # Specifies Hugo version to ensure consistent builds
 
-      - name: Cache Hugo
-        uses: actions/cache@v3
+      - name: Build
+        run: hugo --minify  # Builds the site with minification
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        if: github.ref == 'refs/heads/main'
         with:
-          path: /tmp/hugo_cache
-          key: ${{ runner.os }}-hugomod-${{ hashFiles('**/go.sum') }}
-          restore-keys: |
-            ${{ runner.os }}-hugomod-            
-
-      - name: Build Blog
-        env:
-          TZ: 'Europe/Berlin'
-        run: hugo --minify
-
-      # DEPLOY TO REMOTE SERVER
-
-      - name: Install SSH Key
-        uses: shimataro/ssh-key-action@v2
-        with:
-          key: ${{ secrets.DEPLOY_KEY }} 
-          known_hosts: 'placeholder'
-
-      - name: Adding Known Hosts
-        run: ssh-keyscan -H ${{ secrets.DEPLOY_HOST_IP }} >> ~/.ssh/known_hosts
-
-      - name: Deploy with rsync
-        run: rsync -avz --delete ./public/ ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST_IP }}:${{ secrets.DEPLOY_PATH }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
