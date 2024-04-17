@@ -155,9 +155,7 @@ params:
     title: "About Me"
     image: "/images/me.png"
     content: |-
-      I am a software developer with a passion for web development. I have a background in computer science and mathematics, and I have a strong interest in the intersection of technology and art. I am currently working as a software developer at [example org.](https://example.com) in San Francisco, CA. 
-
-      I am currently working on a project that will be used to help people find the best way to get around the city.
+      I am a software developer with a passion for web development. I have a background in computer science and mathematics, and I have a strong interest in the intersection of technology and art. I am currently working as a software developer at [example org.](https://example.com) in Taipei Taiwan. 
     skills:
       enable: true
       title: "Here are a few technologies I've been working with recently:"
@@ -165,9 +163,29 @@ params:
         - "HTML"
         - "CSS"
         - "JavaScript"
-        - "React"
-        - "Node"
-        - "Express"
+        - "Java"
+        - "Angular"
+        - "Hugo"
+        - "Oracle"
+
+# About
+  language:
+    enable: true
+    title: "About Me"
+    image: "/images/me.png"
+    content: |-
+      I am a software developer with a passion for web development. I have a background in computer science and mathematics, and I have a strong interest in the intersection of technology and art. I am currently working as a software developer at [example org.](https://example.com) in Taipei Taiwan. 
+    skills:
+      enable: true
+      title: "Here are a few technologies I've been working with recently:"
+      items:
+        - "HTML"
+        - "CSS"
+        - "JavaScript"
+        - "Java"
+        - "Angular"
+        - "Hugo"
+        - "Oracle"
 
   # Experience
   experience:
@@ -176,29 +194,39 @@ params:
     items:
       - job: "Software Engineer"
         company: "Innova Solutions"
-        companyUrl: "https://example.com"
+        companyUrl: "https://www.innovasolutions.com/"
         date: "Jan 2022 - present"
         # featuredLink:
         #   enable: true
           # name: "View the project"
           # url: "https://example.com"
-        content: "I am currently working as a software developer at [example org.](https://example.com) in San Francisco, CA. I am currently working on a project that will be used to help people find the best way to get around the city."
+        content: |
+          Health Insurance System
+          - Optimized OIDC Login Workflow
+          - Accessibility Integration Across Platforms
+          - Enhanced Test Coverage
+          - Cross-Cultural Collaboration
+          - Documentation Excellence
+          - Strategic Functionality Implementation
 
-      # - job: "Software Developer"
-      #   company: "Amazon"
-      #   companyUrl: "https://example.com"
-      #   date: "Sep 2020 - Dec 2021"
-      #   featuredLink:
-      #     enable: true
-      #     url: "https://example.com"
-      #   info:
-      #     enable: true
-      #     content: I worked as a software developer for more than one year in Amazon.
-      #   content: |
-      #     I am currently working as a software developer at [example org.](https://example.com) in San Francisco, CA. I am currently working on a project that will be used to help people find the best way to get around the city.
 
-      #     - Lead backend developer for a product.
-      #     - Created a frontend design for a product.
+      - job: "Sales Assistant"
+        company: "Micro-Star International"
+        companyUrl: "https://tw.msi.com/"
+        date: "Aug 2017 - Mar 2018"
+        # featuredLink:
+        #   enable: false
+        #   url: "https://example.com"
+        # info:
+        #   enable: false
+        #   content: Manage import and export business of Russia and Eastern European countries
+        content: |
+          Manage import and export business of Russia and Eastern European countries
+          - Process and customer orders and keep a backup of order information.
+          - Maintain contact with customers, reply to e-mails, and confirm delivery dates.
+          - Provide shipping documents, assist sales staff in controlling shipping, and handle import and export matters.
+          - Provide regular sales status and report for sales staff or supervisor's reference.
+          - Assist sales staff in handling internal administrative operations related to the sales business.
 
       # - job: "Junior Software Developer"
       #   company: "Apple"
@@ -215,67 +243,50 @@ params:
       #     - Lead backend developer for a product.
       #     - Created a frontend design for a product.
 
-      # - job: "UI/UX Designer"
-      #   company: "Netflix"
-      #   companyUrl: "https://example.com"
-      #   date: "June 2017 - Nov 2019"
-      #   featuredLink:
-      #     enable: true
-      #     url: "https://example.com"
-      #   content: |
-      #     I am currently working as a software developer at [example org.](https://example.com) in San Francisco, CA. I am currently working on a project that will be used to help people find the best way to get around the city.
-
-      #     - Lead backend developer for a product.
-      #     - Created a frontend design for a product.
-
-      # - job: "Product Designer"
-      #   company: "Google"
-      #   companyUrl: "https://example.com"
-      #   date: "Feb 2016 - Mar 2017"
-      #   content: "I am currently working as a software developer at [example org.](https://example.com) in San Francisco, CA. I am currently working on a project that will be used to help people find the best way to get around the city."
-
   # Education
   education:
-    enable: false
+    enable: true
     # title: "Custom Name"
     index: false
     items:
-      - title: "Master of Business Administration"
+      - title: "Master of Information Management"
         school:
-          name: "University of California, Berkeley"
-          url: "https://example.org"
-        date: "2013 - 2015"
-        GPA: "3.8 out of 5.0"
+          name: "National Chung Cheng University, Taiwan"
+          url: "https://www.ccu.edu.tw/?Lang=en"
+        date: "Sep 2019 - Oct 2021"
+        GPA: "4.05 out of 5.0"
         content: |-
-          Extracurricular Activities
-            - Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-            - Tempora esse, eaque delectus nulla quo doloribus itaque expedita alias natus optio totam maxime nihil excepturi velit a animi laborum hic similique.
-      - title: "Bachelor of Science in Computer Science"
-        school:
-          name: "Massachusetts Institute of Technology"
-          url: "https://example.org"
-        date: "2009 - 2013"
-        GPA: "3.9 out of 5.0"
-        content: |-
-          I Publiced two papers in the ACM SIGCHI Conference on Artificial Intelligence.
-          - [Fast and Accurate Object Detection with a Single Convolutional Neural Network](https://example.com)
-          - Face mask detection using a single convolutional neural network.
+          Relevant Courses: 
+          - Data Structure
+          - Data Communications & Networks
+          - Database Management
+          - System Analysis and Design
+          - Neural Networks.
+          
+          Master Thesis: 
+          [Factors Influencing the Continuous Usage Intention of Online Travel Agency Platforms](https://hdl.handle.net/11296/ar59du)
+        # featuredLink:
+        #   enable: true
+        #   name: "My academic record"
+        #   url: "https://example.com"
 
-          Extracurricular Activities
-            - Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-            - Tempora esse, eaque delectus nulla quo doloribus itaque expedita alias natus optio totam maxime nihil excepturi velit a animi laborum hic similique.
-        featuredLink:
-          enable: true
-          name: "My academic record"
-          url: "https://example.com"
-      # - title: "High School"
-      #   school:
-      #     name: "Thomas Jefferson High School for Science and Technology."
-      #     url: "https://example.org"
-      #   GPA: "4.2 out of 5.0"
-      #   featuredLink:
-      #     enable: true
-      #     url: "https://example.com"
+            
+      - title: "Bachelor of Russian Language and Literature"
+        school:
+          name: "Tamkang University, Taiwan"
+          url: "https://www.tfux.tku.edu.tw/russian/web_page/1559"
+        date: "2009 - 2013"
+        # GPA: "3.9 out of 5.0"
+        content: |-
+          Student exchange program for an academic year from Sep 2014 to Jun 2015 in [Moscow State Pedagogical University](https://en.mpgu.su/home/)
+
+        #   Extracurricular Activities
+        #     - Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+        #     - Tempora esse, eaque delectus nulla quo doloribus itaque expedita alias natus optio totam maxime nihil excepturi velit a animi laborum hic similique.
+        # featuredLink:
+        #   enable: true
+        #   name: "My academic record"
+        #   url: "https://example.com"
 
   # Achievements
   achievements:
@@ -301,53 +312,53 @@ params:
 
   # projects
   projects:
-    enable: false
+    enable: true
     # title: "Custom Name"
     items:
       - title: Hugo Profile
         content: A highly customizable and mobile first Hugo template for personal portfolio and blog.
-        image: /images/projects/profile.png
+        image: /logo.svg
         featured:
           name: Demo
-          link: https://hugo-profile.netlify.app
+          link: https://ginaz5.github.io
         badges:
           - "Hugo"
           - "Bootstrap"
           - "Javascript"
         links:
-          - icon: fa fa-envelope
-            url: mailto:?subject=Hugo%20Profile%20Template&body=Check%20it%20out:%20https%3a%2f%2fhugo-profile.netlify.app%2fblog%2fmarkdown-syntax%2f
+          # - icon: fa fa-envelope
+          #   url: mailto:?subject=Hugo%20Profile%20Template&body=Check%20it%20out:%20https%3a%2f%2fhugo-profile.netlify.app%2fblog%2fmarkdown-syntax%2f
           - icon: fab fa-github
-            url: https://github.com/gurusabarish/hugo-profile
-          - icon: fab fa-twitter
-            url: https://twitter.com/intent/tweet?text=Check+it+out:&url=https%3A%2F%2Fgithub.com%2Fgurusabarish%2Fhugo-profile
+            url: https://github.com/ginaz5/ginaz5.github.io
+          # - icon: fab fa-twitter
+            # url: https://twitter.com/intent/tweet?text=Check+it+out:&url=https%3A%2F%2Fgithub.com%2Fgurusabarish%2Fhugo-profile
 
-      - title: Image Converter
-        content: A web app to convert image to pdf, png to jpg, png to jpg and png to webp without database using django.
-        image: /images/projects/converter.jpg
-        featured:
-          name: Demo
-          link: https://django-converter.herokuapp.com
-        badges:
-          - "Django"
-          - "Bootstrap"
-        links:
-          - icon: fab fa-github
-            url: https://github.com/gurusabarish/converter
+      # - title: Image Converter
+      #   content: A web app to convert image to pdf, png to jpg, png to jpg and png to webp without database using django.
+      #   image: /images/projects/converter.jpg
+      #   featured:
+      #     name: Demo
+      #     link: https://django-converter.herokuapp.com
+      #   badges:
+      #     - "Django"
+      #     - "Bootstrap"
+      #   links:
+      #     - icon: fab fa-github
+      #       url: https://github.com/gurusabarish/converter
 
-      - title: Hugo Profile V2
-        content: A clean and simple Hugo template for personal portfolio and blog.
-        image: /images/projects/profile2.jpg
-        featured:
-          name: Demo V2
-          link: https://hugo-profile-2.netlify.app
-        badges:
-          - "Hugo"
-          - "Bootstrap"
-          - "Javascript"
-        links:
-          - icon: fab fa-github
-            url: https://github.com/gurusabarish/HugoProfileV2
+      # - title: Hugo Profile V2
+      #   content: A clean and simple Hugo template for personal portfolio and blog.
+      #   image: /images/projects/profile2.jpg
+      #   featured:
+      #     name: Demo V2
+      #     link: https://hugo-profile-2.netlify.app
+      #   badges:
+      #     - "Hugo"
+      #     - "Bootstrap"
+      #     - "Javascript"
+      #   links:
+      #     - icon: fab fa-github
+      #       url: https://github.com/gurusabarish/HugoProfileV2
 
   #Contact
   contact:
