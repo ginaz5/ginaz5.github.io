@@ -1,4 +1,4 @@
-This is the personal profolio using hugo.
+Portfolio using hugo.
 
 Theme: [Hugo Profile](https://themes.gohugo.io/themes/hugo-profile/)
 
