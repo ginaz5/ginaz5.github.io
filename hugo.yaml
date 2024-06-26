@@ -168,25 +168,6 @@ params:
         - "Hugo"
         - "Oracle"
 
-# About
-  language:
-    enable: true
-    title: "About Me"
-    image: "/images/me.png"
-    content: |-
-      I am a software developer with a passion for web development. I have a background in computer science and mathematics, and I have a strong interest in the intersection of technology and art. I am currently working as a software developer at [example org.](https://example.com) in Taipei Taiwan. 
-    skills:
-      enable: true
-      title: "Here are a few technologies I've been working with recently:"
-      items:
-        - "HTML"
-        - "CSS"
-        - "JavaScript"
-        - "Java"
-        - "Angular"
-        - "Hugo"
-        - "Oracle"
-
   # Experience
   experience:
     enable: true
