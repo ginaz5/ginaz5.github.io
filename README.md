@@ -8,3 +8,6 @@ Useful tutorial:
 Ignore files locally
 `echo "/public/" >>.git/info/exclude `
 `cat .git/info/exclude    `
+
+Reference:
+https://github.com/peaceiris/actions-hugo?tab=readme-ov-file
