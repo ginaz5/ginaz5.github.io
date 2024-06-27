@@ -1,1 +1,6 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Blogs on Gina's Blog</title><link>https://ginaz5.github.io/blogs/</link><description>Recent content in Blogs on Gina's Blog</description><generator>Hugo</generator><language>en-us</language><lastBuildDate/><atom:link href="https://ginaz5.github.io/blogs/index.xml" rel="self" type="application/rss+xml"/></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Blogs on Gina's Blog</title><link>https://ginaz5.github.io/blogs/</link><description>Recent content in Blogs on Gina's Blog</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Sat, 11 Jun 2022 19:58:43 +0800</lastBuildDate><atom:link href="https://ginaz5.github.io/blogs/index.xml" rel="self" type="application/rss+xml"/><item><title>已解決 - VS code terminal 圖標亂碼</title><link>https://ginaz5.github.io/blogs/fix-vs-code-logo/</link><pubDate>Sat, 11 Jun 2022 19:58:43 +0800</pubDate><guid>https://ginaz5.github.io/blogs/fix-vs-code-logo/</guid><description>當你安裝oh-my-zsh 主題 Power10k，發現VS Code Terminal 裡面的 Icon 顯示不出來可以嘗試Github 大神們提供的方法
+開啟VS Code的設定
+On PC: 快捷鍵Ctrl + , 或者 File → Preferences → Settings
+On Mac: 快捷鍵 shift + ⌘ + , 或者 Code → Preferences → Settings
+直接在上面搜尋設定：terminal.integrated.fontFamily
+把你所使用的字體填上去，像我就是 MesloLGS NF</description></item></channel></rss>
