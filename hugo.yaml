@@ -27,7 +27,7 @@ Menus:
     - identifier: blog
       name: Blog
       title: Blog posts
-      url: /blogs
+      url: /blog
       weight: 1
     # - identifier: gallery
     #   name: Gallery
@@ -356,7 +356,7 @@ params:
 
   footer:
     recentPosts:
-      path: "blogs"
+      path: "blog"
       count: 3
       title: Recent Posts
       enable: true
@@ -368,7 +368,7 @@ params:
       # instagram: https://instagram.com
       # facebook: https://facebook.com
 
-  # List pages like blogs and posts
+  # List pages like blog and posts
   listPages:
     disableFeaturedImage: false
 
