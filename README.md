@@ -11,3 +11,12 @@ Ignore files locally
 
 Reference:
 https://github.com/peaceiris/actions-hugo?tab=readme-ov-file
+
+https://gohugo.io/hosting-and-deployment/hosting-on-github/
+
+the current config
+https://theplaybook.dev/docs/deploy-hugo-to-github-pages/
+
+https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages
+
+https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site

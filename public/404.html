@@ -28,24 +28,37 @@
 
 
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZC03PYSTCJ"></script>
-<script>
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.dataLayer = window.dataLayer || [];
-	function gtag(){dataLayer.push(arguments);}
-	gtag('js', new Date());
-	gtag('config', 'G-ZC03PYSTCJ', { 'anonymize_ip': false });
-}
-</script>
+  
+    
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZC03PYSTCJ"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-ZC03PYSTCJ');
+        }
+      </script>
+    
+  
 
-<meta property="og:title" content="404 Page not found" />
-<meta property="og:description" content="This is Gina&#39;s blog" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="http://localhost:1313/404.html" /><meta property="og:site_name" content="42K" />
 
-<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="404 Page not found"/>
-<meta name="twitter:description" content="This is Gina&#39;s blog"/>
+<meta property="og:url" content="http://localhost:1313/404.html">
+  <meta property="og:site_name" content="Gina&#39;s Blog">
+  <meta property="og:title" content="404 Page not found">
+  <meta property="og:description" content="This is Gina&#39;s blog">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="website">
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="404 Page not found">
+  <meta name="twitter:description" content="This is Gina&#39;s blog">
 
 
 <link rel="stylesheet" href="/bootstrap-5/css/bootstrap.min.css" media="all"><link rel="stylesheet" href="/css/header.css" media="all">
@@ -297,6 +310,40 @@ Gina&#39;s Blog | Page not found
   </div><footer>
     
  
+ 
+<div class="container py-3" id="recent-posts">
+    
+    
+    <div class="h3 text-center text-secondary py-3">
+        Recent Posts
+    </div>
+    <div class="row justify-content-center">
+        
+        <div class="col-lg-4 col-md-6 pt-2">
+            <div class="card h-100">
+                
+                <div class="card-body bg-transparent p-3 shadow-sm">
+                    <a href="/blogs/fix-vs-code-logo/" class="primary-font card-title">
+                        <h5 class="card-title bg-transparent" title="已解決 - VS code terminal 圖標亂碼">已解決 - VS code terminal 圖標 …</h5>
+                    </a>
+                    <div class="card-text secondary-font">
+                        <p>當你安裝oh-my-zsh 主題 Power10k，發現VS Code Terminal 裡面的 Icon 顯示不出來可以嘗試Github 大神們提供的方法
+開啟VS Code的設定
+On PC: 快捷鍵Ctrl + , 或者 File → Preferences → Settings
+On Mac: 快捷鍵 shift + ⌘ + , 或者 Code → Preferences → Settings
+直接在上面搜尋設定：terminal.integrated.fontFamily
+把你所使用的字體填上去，像我就是 MesloLGS NF</p>
+                    </div>
+                </div>
+                <div class="mt-auto card-footer">
+                    <span class="float-start">Jun 11, 2022</span>
+                    <a href="/blogs/fix-vs-code-logo/" class="float-end btn btn-outline-info btn-sm">Read</a>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
 
 <div class="text-center pt-2">
     
