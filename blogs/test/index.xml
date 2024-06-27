@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Test on Gina&#39;s Blog</title>
+    <title>已解決 - VS code terminal 圖標亂碼 on Gina&#39;s Blog</title>
     <link>http://localhost:1313/blogs/test/</link>
-    <description>Recent content in Test on Gina&#39;s Blog</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in 已解決 - VS code terminal 圖標亂碼 on Gina&#39;s Blog</description>
+    <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate></lastBuildDate>
     <atom:link href="http://localhost:1313/blogs/test/index.xml" rel="self" type="application/rss+xml" />
