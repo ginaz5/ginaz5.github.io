@@ -60,6 +60,8 @@ jobs:
           # For maximum backward compatibility with Hugo modules
           HUGO_ENVIRONMENT: production
           HUGO_ENV: production
+          HUGO_PARAMS_RESUMEURL: ${{ secrets.RESUME_URL }}
+          HUGO_PARAMS_LINKEDINURL: ${{ secrets.LINKEDIN_URL }}
         run: |
           hugo \
             --minify \
