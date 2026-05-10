@@ -345,11 +345,12 @@ params:
       path: "blog"
       count: 3
       title: Recent Posts
-      enable: true
+      enable: false
       disableFeaturedImage: false
     socialNetworks:
       github: https://github.com/ginaz5
       linkedin: https://www.linkedin.com/in/hui-ting-lin-209a93a4/
+      medium: https://medium.com/@TBD-MEDIUM-HANDLE
       # twitter: https://twitter.com
       # instagram: https://instagram.com
       # facebook: https://facebook.com
