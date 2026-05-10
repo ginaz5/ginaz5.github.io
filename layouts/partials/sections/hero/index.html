@@ -1,0 +1,47 @@
+{{ if .Site.Params.hero.enable | default false }}
+<section id="hero" class="py-5 align-middle" style="background: linear-gradient(135deg, var(--bs-light) 0%, transparent 100%);">
+  <div class="container px-3 px-sm-5 px-md-5 px-lg-5 pt-lg-3">
+    <div class="row align-items-center">
+      <div class="col-sm-12 col-md-12 col-lg-8 content {{ if .Site.Params.animate }}animate{{ end }}" id="primary-font">
+        <span class="subtitle text-uppercase" style="letter-spacing: 2px; font-size: 0.85rem; color: var(--bs-secondary);">
+          {{ .Site.Params.hero.intro }}
+        </span>
+        <h2 class="display-4 fw-bold mt-2">{{ .Site.Params.hero.title }}</h2>
+        <h3 class="text-secondary fs-5">{{ .Site.Params.hero.subtitle }}</h3>
+        <p class="hero-content my-4">
+          {{ .Site.Params.hero.content | markdownify }}
+        </p>
+
+        <div class="d-flex flex-wrap gap-2 align-items-center">
+          {{ if .Site.Params.hero.button.enable }}
+          <a href="{{ .Site.Params.hero.button.url }}" class="btn btn-primary"
+             {{ cond .Site.Params.hero.button.download "download" "" }}
+             {{ if .Site.Params.hero.button.newPage | default false }}target="_blank" rel="noopener"{{ end }}>
+            {{ .Site.Params.hero.button.name }}
+          </a>
+          {{ end }}
+          {{- partial "sections/hero/social.html" . -}}
+        </div>
+      </div>
+
+      <div class="col-sm-12 col-md-12 col-lg-4">
+        <div class="row justify-content-center">
+          <div class="col-sm-12 col-md-9 pt-5 image {{ if .Site.Params.animate }}animate{{ end }} px-5 px-md-5 px-lg-0 text-center">
+            {{ with .Site.Params.hero.image }}
+            <img src="{{ . }}"
+                 class="img-thumbnail mx-auto{{ if $.Site.Params.hero.roundImage }} rounded-circle{{ end }}"
+                 alt="">
+            {{ end }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {{ if .Site.Params.hero.bottomImage.enable }}
+  <div class="bottom-image">
+    <img src="/images/wave.svg" alt="">
+  </div>
+  {{ end }}
+</section>
+{{ end }}
