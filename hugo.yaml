@@ -277,6 +277,26 @@ params:
       - title: "Workshop: GoF Structural Design Patterns"
         content: "Internal session teaching design patterns grounded in real DMCAAS (healthcare) code examples."
 
+  skills:
+    enable: true
+    title: "Skills & Certifications"
+    certifications:
+      - name: "AWS Certified Solutions Architect — Associate"
+        url: "https://www.credly.com/users/TBD-CREDLY-HANDLE"
+    groups:
+      - name: "Languages"
+        items: ["Java", "Ruby", "TypeScript / JavaScript", "SQL"]
+      - name: "Backend"
+        items: ["Spring Boot", "Rails", "REST", "OAuth2", "JPA / Hibernate", "ActiveRecord"]
+      - name: "Frontend"
+        items: ["Vue.js", "TypeScript", "HAML", "i18n"]
+      - name: "Data"
+        items: ["PostgreSQL", "Oracle", "Redis", "Elasticsearch"]
+      - name: "DevOps & Cloud"
+        items: ["AWS", "Docker", "Heroku", "Maven", "Git", "TeamCity", "CodeDeploy"]
+      - name: "Testing"
+        items: ["JUnit5", "Mockito", "Minitest", "FactoryBot"]
+
   projects:
     enable: true
     title: "Featured Projects"
