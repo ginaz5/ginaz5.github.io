@@ -185,55 +185,35 @@ params:
     # title: "Custom Name"
     items:
       - job: "Software Engineer"
-        company: "Innova Solutions"
-        companyUrl: "https://www.innovasolutions.com/"
-        date: "Jan 2022 - present"
-        # featuredLink:
-        #   enable: true
-          # name: "View the project"
-          # url: "https://example.com"
+        company: "Tao Digital Solutions Taiwan, LTD."
+        companyUrl: "https://www.taodigitalsolutions.com/"
+        date: "Nov 2024 - present"
         content: |
-          Health Insurance System
-          - Optimized OIDC Login Workflow
-          - Accessibility Integration Across Platforms
-          - Enhanced Test Coverage
-          - Cross-Cultural Collaboration
-          - Documentation Excellence
-          - Strategic Functionality Implementation
+          Automotive Digital Retailing (Ruby on Rails, Java, PostgreSQL)
+          - Adapted to a new tech stack (Rails, HAML, Vue) within one sprint and shipped production code immediately.
+          - Led a multi-phase feature: agent price-PDF editing synced to a deal-management system. Refactored a 5,000+-line service into an abstract-class hierarchy.
+          - Built a greenfield OEM partner-system integration end-to-end (OAuth2, REST, retry/alerting) as a polymorphic dispatcher subclass.
+          - Optimized a CRM search path with a single batched, case-insensitive SQL query, eliminating an N+1 bottleneck.
+          - Introduced cross-feature-flag validation that makes invalid configurations unrepresentable at save time.
 
+      - job: "Software Engineer"
+        company: "Innova Solutions Taiwan, LTD."
+        companyUrl: "https://www.innovasolutions.com/"
+        date: "Jan 2022 - Oct 2024"
+        content: |
+          Health Insurance / Utilization Management (Java, Spring Boot, Angular)
+          - Designed audit-trail data model for an ML-prediction feature: JPA entities, four-state lifecycle enum, Liquibase migrations sequenced via blue-green deployment against live production tables.
+          - Built a JVM memory-pressure alerting pipeline on AWS Lambda + CloudWatch.
+          - Diagnosed a Hibernate persist bottleneck handling ~40K entity records; isolated and proposed batched native-SQL path.
+          - Upgraded shared CheckStyle toolchain to support Java 17 across eight downstream services.
+          - Led internal workshops on Java 9–21 security, GoF design patterns, and AWS networking.
 
-      - job: "Sales Assistant"
+      - job: "Motherboard Sales Assistant"
         company: "Micro-Star International"
         companyUrl: "https://tw.msi.com/"
         date: "Aug 2017 - Mar 2018"
-        # featuredLink:
-        #   enable: false
-        #   url: "https://example.com"
-        # info:
-        #   enable: false
-        #   content: Manage import and export business of Russia and Eastern European countries
         content: |
-          Manage import and export business of Russia and Eastern European countries
-          - Process and customer orders and keep a backup of order information.
-          - Maintain contact with customers, reply to e-mails, and confirm delivery dates.
-          - Provide shipping documents, assist sales staff in controlling shipping, and handle import and export matters.
-          - Provide regular sales status and report for sales staff or supervisor's reference.
-          - Assist sales staff in handling internal administrative operations related to the sales business.
-
-      # - job: "Junior Software Developer"
-      #   company: "Apple"
-      #   companyUrl: "https://example.com"
-      #   date: "Jan 2020 - Aug 2020"
-      #   info:
-      #     enable: false
-      #   featuredLink:
-      #     enable: true
-      #     url: "https://example.com"
-      #   content: |
-      #     I am currently working as a software developer at [example org.](https://example.com) in San Francisco, CA. I am currently working on a project that will be used to help people find the best way to get around the city.
-
-      #     - Lead backend developer for a product.
-      #     - Created a frontend design for a product.
+          Managed import/export business for Russia and Eastern European markets.
 
   # Education
   education:
