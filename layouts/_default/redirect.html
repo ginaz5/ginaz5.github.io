@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Redirecting...</title>
+  {{ $url := .Params.redirect | default .Site.Params.resumeurl }}
+  {{ if $url }}
+  <meta http-equiv="refresh" content="0; url={{ $url | safeURL }}">
+  <link rel="canonical" href="{{ $url | safeURL }}">
+  {{ end }}
+</head>
+<body>
+  {{ if $url }}
+  <p>Redirecting to <a href="{{ $url | safeURL }}">{{ $url }}</a>…</p>
+  {{ else }}
+  <p>Resume URL not configured. Set <code>RESUME_URL</code> in repo secrets.</p>
+  {{ end }}
+</body>
+</html>
