@@ -157,22 +157,27 @@ params:
 
   # About
   about:
-    enable: false
-    title: "About Me"
+    enable: true
+    title: "About"
     image: "/images/me.png"
     content: |-
-      I am a software developer with a passion for web development. I have a background in computer science and mathematics, and I have a strong interest in the intersection of technology and art. I am currently working as a software developer at [example org.](https://example.com) in Taipei Taiwan. 
+      Backend-leaning full-stack engineer with 4+ years of experience.
+      I specialize in scalable partner-system integrations, OAuth2 flows,
+      and high-traffic database paths. Cross-cultural collaboration across
+      two-language stacks (Java/Spring and Ruby on Rails), with delivery
+      experience in healthcare and automotive-retail domains.
     skills:
       enable: true
-      title: "Here are a few technologies I've been working with recently:"
+      title: "Recent stack"
       items:
-        - "HTML"
-        - "CSS"
-        - "JavaScript"
         - "Java"
-        - "Angular"
-        - "Hugo"
-        - "Oracle"
+        - "Ruby on Rails"
+        - "Spring Boot"
+        - "TypeScript / Vue"
+        - "PostgreSQL / Oracle"
+        - "AWS (SA Associate)"
+        - "Docker"
+        - "Git / TeamCity / CodeDeploy"
 
   # Experience
   experience:
