@@ -324,6 +324,19 @@ params:
           - icon: fab fa-github
             url: https://github.com/ginaz5/TBD-REPO-3
 
+  languages:
+    enable: true
+    title: "Languages"
+    items:
+      - name: "Chinese"
+        level: "Native"
+      - name: "English"
+        level: "TOEIC 930/990"
+      - name: "Russian"
+        level: "TORFL B1"
+      - name: "Korean"
+        level: "TOPIK 1"
+
   #Contact
   contact:
     enable: true
