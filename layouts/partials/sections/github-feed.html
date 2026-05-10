@@ -1,3 +1,4 @@
+{{ if .Site.Params.githubFeed.enable | default true }}
 {{- $githubUser := "ginaz5" -}}
 {{- $apiURL := printf "https://api.github.com/users/%s/repos?sort=updated&per_page=20" $githubUser -}}
 {{- $repos := slice -}}
@@ -49,3 +50,4 @@
     </div>
   </div>
 </section>
+{{ end }}
