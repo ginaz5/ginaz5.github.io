@@ -1,6 +1,6 @@
 baseURL: "https://ginaz5.github.io/"
 languageCode: "en-us"
-title: "Gina's Blog"
+title: "Gina Lin — Software Engineer"
 theme: hugo-profile
 
 outputs:
@@ -53,8 +53,10 @@ Menus:
     #   weight: 2
 
 params:
-  title: "42K"
-  description: This is Gina's blog
+  title: "Gina Lin"
+  description: "Gina Lin — Software Engineer. Java/Spring, Rails, AWS. Portfolio and recent GitHub work."
+  resumeurl: ""
+  linkedinurl: ""
   # staticPath: ""  # The path to serve the static files from
   favicon: "/logo.svg"
 
@@ -106,7 +108,7 @@ params:
     align: ms-auto # Left: ms-auto | center: mx-auto | right: me-auto | Default: ms-auto
     # brandLogo: "/logo.png" # Logo for the brand | default is the favicon variable
     # showBrandLogo: false # Show brand logo in nav bar | default is true
-    brandName: "42K" # Brand name for the brand | default is the title variable
+    brandName: "Gina Lin" # Brand name for the brand | default is the title variable
     disableSearch: false
     # searchPlaceholder: "Search"
     stickyNavBar:
@@ -123,10 +125,10 @@ params:
   # Hero
   hero:
     enable: true
-    intro: "Hi, my name is"
+    intro: "Hi, I'm"
     title: "Gina Lin."
-    subtitle: "I build things for the web"
-    content: "A passionate web app developer. I tend to make use of modern web technologies to build websites that looks great, feels fantastic, and functions correctly."
+    subtitle: "Software Engineer · Java/Spring + Rails · AWS SA Associate"
+    content: "I build scalable backend integrations and developer-friendly APIs. Currently shipping Rails + Java for an automotive digital-retailing platform; previously Java/Spring for a healthcare utilization-management product."
     image: /images/hero.svg
     bottomImage:
       enable: true
@@ -134,8 +136,8 @@ params:
     button:
       enable: true
       name: "Resume"
-      url: "https://www.cakeresume.com/s--HRWvLLIdGFYljZczhlKGwQ--/ginalin"
-      download: true
+      url: "/resume/"
+      download: false
       newPage: false
     socialLinks:
       fontAwesomeIcons:
@@ -143,6 +145,8 @@ params:
           url: https://github.com/ginaz5
         - icon: fab fa-linkedin-in
           url: https://www.linkedin.com/in/hui-ting-lin-209a93a4/
+        - icon: fab fa-medium
+          url: https://medium.com/@TBD-MEDIUM-HANDLE
       #   - icon: fab fa-x-twitter
       #     url: https://example.com
       # customIcons:
