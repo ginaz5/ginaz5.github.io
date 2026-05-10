@@ -1,0 +1,51 @@
+{{- $githubUser := "ginaz5" -}}
+{{- $apiURL := printf "https://api.github.com/users/%s/repos?sort=updated&per_page=20" $githubUser -}}
+{{- $repos := slice -}}
+{{- with resources.GetRemote $apiURL -}}
+  {{- with .Err -}}
+    {{- errorf "github-feed: failed to fetch %s: %s" $apiURL . -}}
+  {{- else -}}
+    {{- $all := unmarshal .Content -}}
+    {{- range $all -}}
+      {{- if and (not .fork) (not .archived) -}}
+        {{- $repos = $repos | append . -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- else -}}
+  {{- errorf "github-feed: GetRemote returned nothing for %s" $apiURL -}}
+{{- end -}}
+
+{{- $repos = first 6 $repos -}}
+
+<section id="github-feed" class="py-5">
+  <div class="container">
+    <h3 class="text-center">More on GitHub</h3>
+    <p class="text-center secondary-font">Auto-pulled at build time, sorted by last updated.</p>
+
+    <div class="row justify-content-center px-3 px-md-5">
+      {{ range $repos }}
+      <div class="col-lg-4 col-md-6 my-3">
+        <div class="card my-3 h-100">
+          <div class="card-body bg-transparent p-3">
+            <h5 class="card-title">
+              <a href="{{ .html_url }}" target="_blank" rel="noopener">{{ .name }}</a>
+            </h5>
+            <div class="card-text secondary-font">
+              {{ with .description }}{{ . }}{{ else }}<em>No description.</em>{{ end }}
+            </div>
+            <div class="pt-2">
+              {{ with .language }}<span class="badge badge-secondary">{{ . }}</span>{{ end }}
+              <small class="float-end text-muted">★ {{ .stargazers_count }} · updated {{ (time .updated_at) | dateFormat "Jan 2, 2006" }}</small>
+            </div>
+          </div>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+
+    <div class="text-center pt-3">
+      <a class="btn" href="https://github.com/{{ $githubUser }}" target="_blank" rel="noopener">View all on GitHub →</a>
+    </div>
+  </div>
+</section>
