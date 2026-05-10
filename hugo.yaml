@@ -262,25 +262,20 @@ params:
 
   # Achievements
   achievements:
-    enable: false
-    # title: "Custom Name"
+    enable: true
+    title: "Achievements"
     items:
-      - title: Google kickstart runner
-        content: I solved all problems with optimal solution.
-        url: https://example.com
-        image: /images/achievment.jpg
-      - title: Facebook Hackathon Winner
-        content: Developed a product using Artificial Intelligence.
-        image: /images/achievment.jpg
-      - title: Hugo Profile
-        content: Developed a theme and getting 1K+ downloads per month.
-        url: "https://github.com/gurusabarish/hugo-profile"
-        image: /images/achievment.jpg
-      - title: Microsoft Imagine Runner
-        content: We are developed a product which can help others.
-      - title: Google Summer of Code
-        content: Contributed to a open source project.
-        url: https://example.com
+      - title: "AWS Certified Solutions Architect — Associate"
+        content: "Validated cloud-architecture knowledge across networking, compute, storage, and security."
+
+      - title: "Workshop: Java 9 → 21 Security"
+        content: "Synthesized JVM-level security changes across every LTS release. Delivered to the wider engineering team at Innova with worked examples from the Spring Security stack."
+
+      - title: "Workshop: AWS Networking (VPC / NACL / Security Groups / CloudWatch / ECS)"
+        content: "Cross-team enablement session preparing teams to migrate demo apps to AWS."
+
+      - title: "Workshop: GoF Structural Design Patterns"
+        content: "Internal session teaching design patterns grounded in real DMCAAS (healthcare) code examples."
 
   # projects
   projects:
