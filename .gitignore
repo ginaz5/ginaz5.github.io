@@ -1,1 +1,6 @@
-public
+public/
+.superpowers/
+.env
+.env.local
+.env.*.local
+docs/
