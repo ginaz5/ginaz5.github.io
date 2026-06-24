@@ -1,33 +1,22 @@
 {{ if .Site.Params.skills.enable | default false }}
-<section id="skills" class="py-5">
-  <div class="container">
-    <h3 class="text-center">{{ .Site.Params.skills.title | default "Skills & Certifications" }}</h3>
+<section class="region" id="stack">
+  <h2 class="region-label">{{ .Site.Params.skills.title | default "Stack" }}</h2>
 
-    {{ with .Site.Params.skills.certifications }}
-    <div class="row justify-content-center my-4 px-3 px-md-5">
-      {{ range . }}
-      <div class="col-md-8 my-2">
-        <div class="card p-3">
-          <strong>{{ .name }}</strong>
-          {{ with .url }}<a class="float-end" href="{{ . }}" target="_blank" rel="noopener">Verify →</a>{{ end }}
-        </div>
-      </div>
-      {{ end }}
+  {{ range .Site.Params.skills.certifications }}
+  <div class="cert">
+    <div class="cert-name">{{ .name }}</div>
+    <div class="cert-issuer">{{ .issuer }}{{ with .date }} · {{ . }}{{ end }}</div>
+    {{ with .url }}<div class="cert-link"><a href="{{ . }}" target="_blank" rel="noopener">verify on credly ↗</a></div>{{ end }}
+  </div>
+  {{ end }}
+
+  <div class="stack-grid">
+    {{ range .Site.Params.skills.groups }}
+    <div class="stack-group">
+      <h4>{{ .name }}</h4>
+      <ul>{{ range .items }}<li>{{ . }}</li>{{ end }}</ul>
     </div>
     {{ end }}
-
-    <div class="row justify-content-center px-3 px-md-5">
-      {{ range .Site.Params.skills.groups }}
-      <div class="col-lg-4 col-md-6 my-2">
-        <h5>{{ .name }}</h5>
-        <div>
-          {{ range .items }}
-          <span class="badge badge-secondary m-1">{{ . }}</span>
-          {{ end }}
-        </div>
-      </div>
-      {{ end }}
-    </div>
   </div>
 </section>
 {{ end }}

@@ -1,17 +1,13 @@
 {{ if .Site.Params.languages.enable | default false }}
-<section id="languages" class="py-5">
-  <div class="container">
-    <h3 class="text-center">{{ .Site.Params.languages.title | default "Languages" }}</h3>
-    <div class="row justify-content-center px-3 px-md-5">
-      {{ range .Site.Params.languages.items }}
-      <div class="col-lg-3 col-md-6 my-2 text-center">
-        <div class="card p-3 h-100">
-          <strong>{{ .name }}</strong>
-          <div class="secondary-font">{{ .level }}</div>
-        </div>
-      </div>
-      {{ end }}
+<section class="region" id="languages">
+  <h2 class="region-label">{{ .Site.Params.languages.title | default "Languages" }}</h2>
+  <div class="lang-grid">
+    {{ range .Site.Params.languages.items }}
+    <div class="lang">
+      <div class="lang-name">{{ .name }}</div>
+      {{ with .level }}<div class="lang-level">{{ . }}</div>{{ end }}
     </div>
+    {{ end }}
   </div>
 </section>
 {{ end }}

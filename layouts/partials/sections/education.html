@@ -1,0 +1,19 @@
+{{ if .Site.Params.education.enable | default false }}
+<section class="region" id="education">
+  <h2 class="region-label">Education</h2>
+  {{ range .Site.Params.education.items }}
+  <div class="entry">
+    <div class="entry-head">
+      <div class="entry-title">{{ .title }}</div>
+      <div class="entry-date">{{ .date }}</div>
+    </div>
+    {{ with .sub }}<div class="entry-sub">{{ . }}</div>{{ end }}
+    {{ with .bullets }}
+    <ul>
+      {{ range . }}<li>{{ . | safeHTML }}</li>{{ end }}
+    </ul>
+    {{ end }}
+  </div>
+  {{ end }}
+</section>
+{{ end }}

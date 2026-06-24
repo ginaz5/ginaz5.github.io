@@ -1,0 +1,9 @@
+<aside class="rail" aria-hidden="true">
+  <a href="#hero" class="active">Home</a>
+  {{ if .Site.Params.experience.enable | default true }}<a href="#experience">Experience</a>{{ end }}
+  {{ if .Site.Params.projects.enable | default true }}<a href="#projects">Projects</a>{{ end }}
+  {{ if .Site.Params.skills.enable | default true }}<a href="#stack">Stack</a>{{ end }}
+  {{ if .Site.Params.education.enable | default true }}<a href="#education">Education</a>{{ end }}
+  {{ if .Site.Params.languages.enable | default true }}<a href="#languages">Languages</a>{{ end }}
+  <a href="#contact">Contact</a>
+</aside>

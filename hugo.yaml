@@ -27,7 +27,7 @@ Menus:
     - identifier: medium
       name: Medium
       title: Writing on Medium
-      url: https://medium.com/@TBD-MEDIUM-HANDLE
+      url: https://medium.com/@ginalinfw
       weight: 1
       params:
         external: true
@@ -127,10 +127,9 @@ params:
   # Hero
   hero:
     enable: true
-    intro: "Hi, I'm"
-    title: "Gina Lin."
-    subtitle: "Software Engineer · Java/Spring + Rails · AWS SA Associate"
-    content: "I build scalable backend integrations and developer-friendly APIs. Currently shipping Rails + Java for an automotive digital-retailing platform; previously Java/Spring for a healthcare utilization-management product."
+    title: "Gina Lin"
+    accent: "."
+    content: 'Backend-leaning software engineer in Taipei with 4+ years across <em>Java/Spring Boot and Rails</em>. I refactor large codebases, optimize hot database paths, and ship production-ready code with the test coverage to back it.'
     image: /images/hero.svg
     bottomImage:
       enable: true
@@ -148,7 +147,7 @@ params:
         - icon: fab fa-linkedin-in
           url: https://www.linkedin.com/in/hui-ting-lin-209a93a4/
         - icon: fab fa-medium
-          url: https://medium.com/@TBD-MEDIUM-HANDLE
+          url: https://medium.com/@ginalinfw
       #   - icon: fab fa-x-twitter
       #     url: https://example.com
       # customIcons:
@@ -182,83 +181,48 @@ params:
   # Experience
   experience:
     enable: true
-    # title: "Custom Name"
     items:
-      - job: "Software Engineer"
-        company: "Tao Digital Solutions Taiwan, LTD."
+      - company: "Tao Digital Solutions Taiwan"
         companyUrl: "https://www.taodigitalsolutions.com/"
-        date: "Nov 2024 - present"
-        content: |
-          Automotive Digital Retailing (Ruby on Rails, Java, PostgreSQL)
-          - Adapted to a new tech stack (Rails, HAML, Vue) within one sprint and shipped production code immediately.
-          - Led a multi-phase feature: agent price-PDF editing synced to a deal-management system. Refactored a 5,000+-line service into an abstract-class hierarchy.
-          - Built a greenfield OEM partner-system integration end-to-end (OAuth2, REST, retry/alerting) as a polymorphic dispatcher subclass.
-          - Optimized a CRM search path with a single batched, case-insensitive SQL query, eliminating an N+1 bottleneck.
-          - Introduced cross-feature-flag validation that makes invalid configurations unrepresentable at save time.
+        date: "2024.11 — present"
+        sub: "software engineer · automotive digital retailing · rails + java + postgres"
+        bullets:
+          - "Refactored a 5,000+-line service into an abstract-class hierarchy, enabling existing and new workflows to share core logic via independent extensions — improving maintainability and establishing a scalable pattern for future features."
+          - "Built a greenfield OEM partner-system integration end-to-end — OAuth2 with token caching, REST payload construction, duplicate handling, retry/alerting — architected as a polymorphic subclass of a multi-partner dispatcher for scalable onboarding."
+          - "Optimized a high-traffic CRM search path by replacing per-result queries with a single batched, case-insensitive SQL query, eliminating an N+1 bottleneck and fixing a silent duplicate-customer bug."
+          - "Coordinated a multi-phase feature with a cross-timezone international team against a tight deadline — broke work into four tasks, aligned stakeholders, and adapted to a new stack (Rails, Vue) within one sprint."
+          - "Introduced cross-feature-flag validation that makes invalid configuration states unrepresentable at save time; shipped every feature with 300+ lines of unit/integration tests covering edge cases and error paths."
 
-      - job: "Software Engineer"
-        company: "Innova Solutions Taiwan, LTD."
+      - company: "Innova Solutions Taiwan"
         companyUrl: "https://www.innovasolutions.com/"
-        date: "Jan 2022 - Oct 2024"
-        content: |
-          Health Insurance / Utilization Management (Java, Spring Boot, Angular)
-          - Designed audit-trail data model for an ML-prediction feature: JPA entities, four-state lifecycle enum, Liquibase migrations sequenced via blue-green deployment against live production tables.
-          - Built a JVM memory-pressure alerting pipeline on AWS Lambda + CloudWatch.
-          - Diagnosed a Hibernate persist bottleneck handling ~40K entity records; isolated and proposed batched native-SQL path.
-          - Upgraded shared CheckStyle toolchain to support Java 17 across eight downstream services.
-          - Led internal workshops on Java 9–21 security, GoF design patterns, and AWS networking.
+        date: "2022.01 — 2024.10"
+        sub: "software engineer · health insurance · java + spring boot + angular"
+        bullets:
+          - "Designed the audit-trail data model for an ML-prediction feature — JPA entities, four-state lifecycle enum, Liquibase migrations — sequencing FK constraints safely via blue-green deployment against live production tables."
+          - "Diagnosed a Hibernate persist bottleneck in an async API handling ~40K entity records; isolated the ORM call and proposed a batched native-SQL refactoring path to improve throughput."
+          - "Built a JVM memory-pressure alerting pipeline on AWS Lambda + CloudWatch, enabling proactive incident prevention before GC pauses degraded user-facing traffic."
+          - "Upgraded the shared CheckStyle toolchain to Java 17 across eight downstream services, unblocking adoption of records, text blocks, and switch expressions team-wide."
+          - "Led internal knowledge-sharing sessions on GoF design patterns, Java 9–21 features, and AWS networking — mentoring engineers across multiple teams."
 
-      - job: "Motherboard Sales Assistant"
-        company: "Micro-Star International"
+      - company: "Micro-Star International"
         companyUrl: "https://tw.msi.com/"
-        date: "Aug 2017 - Mar 2018"
-        content: |
-          Managed import/export business for Russia and Eastern European markets.
+        date: "2017.08 — 2018.03"
+        sub: "motherboard sales assistant · russia / eastern europe markets"
+        bullets:
+          - "Managed import/export business for Russia and Eastern European markets."
 
   # Education
   education:
     enable: true
-    # title: "Custom Name"
-    index: false
     items:
-      - title: "Master of Information Management"
-        school:
-          name: "National Chung Cheng University, Taiwan"
-          url: "https://www.ccu.edu.tw/?Lang=en"
-        date: "Sep 2019 - Oct 2021"
-        GPA: "4.05 out of 5.0"
-        content: |-
-          Relevant Courses: 
-          - Data Structure
-          - Data Communications & Networks
-          - Database Management
-          - System Analysis and Design
-          - Neural Networks.
-          
-          Master Thesis: 
-          [Factors Influencing the Continuous Usage Intention of Online Travel Agency Platforms](https://hdl.handle.net/11296/ar59du)
-        # featuredLink:
-        #   enable: true
-        #   name: "My academic record"
-        #   url: "https://example.com"
-
-            
-      - title: "Bachelor of Russian Language and Literature"
-        school:
-          name: "Tamkang University, Taiwan"
-          url: "https://www.tfux.tku.edu.tw/russian/web_page/1559"
-        date: "2009 - 2013"
-        # GPA: "3.9 out of 5.0"
-        content: |-
-          Student exchange program for an academic year from Sep 2014 to Jun 2015 in [Moscow State Pedagogical University](https://en.mpgu.su/home/)
-
-        #   Extracurricular Activities
-        #     - Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-        #     - Tempora esse, eaque delectus nulla quo doloribus itaque expedita alias natus optio totam maxime nihil excepturi velit a animi laborum hic similique.
-        # featuredLink:
-        #   enable: true
-        #   name: "My academic record"
-        #   url: "https://example.com"
+      - title: "National Chung Cheng University"
+        date: "2019.09 — 2021.10"
+        sub: "m.s. in information management"
+      - title: "Tamkang University"
+        date: "2013.09 — 2017.06"
+        sub: "b.a. in russian language and literature"
+        bullets:
+          - 'Exchange: <a href="https://en.mpgu.su/home/" target="_blank" rel="noopener" style="color: inherit; text-decoration: underline; text-decoration-color: var(--rule);">Moscow State Pedagogical University</a> (2014–2015)'
 
   # Achievements
   achievements:
@@ -279,71 +243,72 @@ params:
 
   skills:
     enable: true
-    title: "Skills & Certifications"
+    title: "Stack"
     certifications:
       - name: "AWS Certified Solutions Architect — Associate"
-        url: "https://www.credly.com/users/TBD-CREDLY-HANDLE"
+        issuer: "Amazon Web Services"
+        date: "2024"
+        url: "https://www.credly.com/badges/e2f01a47-fd8e-4958-ba0f-54ed84c85bfa/public_url"
     groups:
       - name: "Languages"
-        items: ["Java", "Ruby", "TypeScript / JavaScript", "SQL"]
+        items: ["Java (primary)", "Ruby", "JavaScript / TypeScript", "SQL"]
       - name: "Backend"
-        items: ["Spring Boot", "Rails", "REST", "OAuth2", "JPA / Hibernate", "ActiveRecord"]
-      - name: "Frontend"
-        items: ["Vue.js", "TypeScript", "HAML", "i18n"]
+        items: ["Spring Boot", "Rails", "REST API design", "OAuth2", "JPA / Hibernate", "ActiveRecord", "OOP · GoF patterns"]
       - name: "Data"
         items: ["PostgreSQL", "Oracle", "Redis", "Elasticsearch"]
-      - name: "DevOps & Cloud"
-        items: ["AWS", "Docker", "Heroku", "Maven", "Git", "TeamCity", "CodeDeploy"]
       - name: "Testing"
         items: ["JUnit5", "Mockito", "Minitest", "FactoryBot"]
+      - name: "DevOps & Cloud"
+        items: ["AWS", "Docker", "Git", "CI/CD · TeamCity · CodeDeploy", "Maven", "Heroku"]
+      - name: "Frontend"
+        items: ["Vue.js", "TypeScript", "HAML", "i18n"]
 
   projects:
     enable: true
     title: "Featured Projects"
     items:
-      - title: "TBD Project 1"
-        content: "TBD: 1-line description of the project. What it does, what it's notable for."
+      - title: "Lingorm Bangkok Map"
+        content: "Bilingual interactive map of Bangkok locations from a fan project — vanilla JS + Vite, Netlify Functions proxy Google Maps API keys so they never ship to the client, with automatic HERE Maps fallback and 72 unit tests."
         badges:
-          - "Java"
-          - "Spring Boot"
+          - "JavaScript"
+          - "Vite"
+          - "Netlify"
+          - "Google Maps API"
         links:
           - icon: fab fa-github
-            url: https://github.com/ginaz5/TBD-REPO-1
-      - title: "TBD Project 2"
-        content: "TBD: 1-line description."
+            url: https://github.com/ginaz5/lingorm-map
+        featured:
+          name: "Live demo →"
+          link: https://lingorm-map.netlify.app
+      - title: "Receipt Scanner Shortcut"
+        content: "iOS Shortcut that scans Taiwanese receipts (統一發票 / paper) with Gemini Vision and writes structured expense rows directly into a Notion database — entirely on-device, no server, with a voice-entry fallback for the camera-shy moments."
         badges:
-          - "Ruby on Rails"
+          - "Python"
+          - "Gemini API"
+          - "Notion API"
+          - "iOS Shortcuts"
         links:
           - icon: fab fa-github
-            url: https://github.com/ginaz5/TBD-REPO-2
-      - title: "TBD Project 3"
-        content: "TBD: 1-line description."
-        badges:
-          - "AWS"
-        links:
-          - icon: fab fa-github
-            url: https://github.com/ginaz5/TBD-REPO-3
+            url: https://github.com/ginaz5/receipt-scanner
 
   languages:
     enable: true
     title: "Languages"
     items:
-      - name: "Chinese"
-        level: "Native"
+      - name: "中文 Chinese"
+        level: "native"
       - name: "English"
-        level: "TOEIC 930/990"
-      - name: "Russian"
+        level: "TOEIC 930 / 990"
+      - name: "Русский Russian"
         level: "TORFL B1"
-      - name: "Korean"
+      - name: "한국어 Korean"
         level: "TOPIK 1"
 
   #Contact
   contact:
     enable: true
-    # title: "Custom Name"
-    content: My inbox is always open. Whether you have a question or just want to say hi, I’ll try my best to get back to you!
-    btnName: Mail me
-    btnLink: mailto:ginalinfw@gmail.com
+    email: "ginalinfw@gmail.com"
+    content: "Open to backend, full-stack, or platform-team conversations. The fastest way to reach me is LinkedIn or email."
     # formspree:
     #   enable: true # `contact.email` value will be ignored
     #   formId: abcdefgh # Take it from your form's endpoint, like 'https://formspree.io/f/abcdefgh'
@@ -360,7 +325,7 @@ params:
     socialNetworks:
       github: https://github.com/ginaz5
       linkedin: https://www.linkedin.com/in/hui-ting-lin-209a93a4/
-      medium: https://medium.com/@TBD-MEDIUM-HANDLE
+      medium: https://medium.com/@ginalinfw
       # twitter: https://twitter.com
       # instagram: https://instagram.com
       # facebook: https://facebook.com

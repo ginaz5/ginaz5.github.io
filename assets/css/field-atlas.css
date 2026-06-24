@@ -1,0 +1,503 @@
+/* ============================================================
+   Field Atlas — personal portfolio for Gina Lin
+   Single design, two themes via [data-theme]
+   ============================================================ */
+
+/* ── theme tokens ── */
+:root,
+[data-theme="light"] {
+  --bg:        #F4F2EB;
+  --ink:       #1A2940;
+  --ink-2:     #3D4961;
+  --ink-soft:  #7A7768;
+  --amber:     #B47B17;
+  --green:     #3E8E76;
+  --rule:      rgba(26, 41, 64, 0.14);
+  --rule-soft: rgba(26, 41, 64, 0.06);
+  --dot:       rgba(26, 41, 64, 0.08);
+}
+
+[data-theme="dark"] {
+  --bg:        #0B1F3F;
+  --ink:       #E8E2D0;
+  --ink-2:     #C7C0A8;
+  --ink-soft:  #8B8470;
+  --amber:     #FFE066;
+  --green:     #6FB6A2;
+  --rule:      rgba(232, 226, 208, 0.15);
+  --rule-soft: rgba(232, 226, 208, 0.04);
+  --dot:       rgba(232, 226, 208, 0.06);
+}
+
+:root { --max: 820px; }
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  background: var(--bg);
+}
+
+body {
+  background: var(--bg);
+  background-image: radial-gradient(circle at 1px 1px, var(--dot) 1px, transparent 0);
+  background-size: 32px 32px;
+  color: var(--ink);
+  font-family: 'Geist', system-ui, -apple-system, sans-serif;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  transition: background-color 0.25s, color 0.25s;
+}
+
+/* ── fixed left rail ── */
+.rail {
+  position: fixed;
+  left: max(2rem, calc(50vw - var(--max)/2 - 11rem));
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  font-family: 'Geist Mono', monospace;
+  font-size: 10.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  border-left: 1px solid var(--rule);
+  padding-left: 1.1rem;
+}
+.rail a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.18s;
+  display: flex;
+  gap: 0.55rem;
+  align-items: center;
+}
+.rail a::before { content: "·"; color: var(--ink-soft); }
+.rail a:hover { color: var(--ink); }
+.rail a.active { color: var(--amber); font-weight: 500; }
+.rail a.active::before { content: "◉"; color: var(--amber); }
+@media (max-width: 1140px) { .rail { display: none; } }
+
+/* ── fixed coordinates top-right ── */
+.coords-fixed {
+  position: fixed;
+  top: 2.5rem;
+  right: 2.5rem;
+  z-index: 10;
+  font-family: 'Geist Mono', monospace;
+  font-size: 10.5px;
+  letter-spacing: 0.05em;
+  color: var(--ink-soft);
+  text-align: right;
+  line-height: 1.65;
+}
+.coords-fixed strong {
+  color: var(--ink);
+  font-weight: 500;
+  display: block;
+  margin-bottom: 0.2rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-size: 10px;
+}
+
+/* ── theme toggle ── */
+.theme-toggle {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 20;
+  background: var(--bg);
+  border: 1px solid var(--rule);
+  color: var(--ink-soft);
+  font-family: 'Geist Mono', monospace;
+  font-size: 10.5px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  padding: 0.6rem 0.95rem;
+  cursor: pointer;
+  border-radius: 2px;
+  transition: color 0.18s, border-color 0.18s, background-color 0.25s;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.theme-toggle:hover { color: var(--amber); border-color: var(--amber); }
+.theme-toggle .glyph { color: var(--amber); font-size: 13px; line-height: 1; }
+
+/* ── main ── */
+main {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: clamp(2rem, 4vw, 4rem) clamp(1.25rem, 3vw, 1.5rem) clamp(4rem, 9vw, 8rem);
+}
+
+/* ── hero ── */
+.hero { padding: clamp(3rem, 9vw, 8rem) 0 clamp(2.5rem, 5vw, 5rem); }
+.hero h1 {
+  font-family: 'Geist', sans-serif;
+  font-weight: 700;
+  font-size: clamp(2.4rem, 9vw, 5.4rem);
+  line-height: 1;
+  letter-spacing: -0.035em;
+  margin-bottom: clamp(1.25rem, 2.5vw, 2rem);
+  color: var(--ink);
+}
+.hero h1 .accent {
+  color: var(--amber);
+  font-weight: 600;
+}
+.lede {
+  font-family: 'Geist', sans-serif;
+  font-weight: 400;
+  font-size: clamp(1.05rem, 2vw, 1.2rem);
+  line-height: 1.6;
+  color: var(--ink-2);
+  margin-bottom: clamp(2.5rem, 5vw, 4rem);
+  text-align: justify;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+}
+.lede em {
+  font-style: normal;
+  color: var(--green);
+  font-weight: 600;
+}
+
+.hero-meta {
+  font-family: 'Geist Mono', monospace;
+  font-size: clamp(10.5px, 1.3vw, 11.5px);
+  color: var(--ink-soft);
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(1.25rem, 3vw, 2rem);
+  border-top: 1px solid var(--rule);
+  padding-top: clamp(1.5rem, 3vw, 2rem);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.hero-meta a {
+  color: var(--ink-2);
+  text-decoration: none;
+  transition: color 0.18s;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+.hero-meta a:hover { color: var(--amber); }
+.hero-meta a::after {
+  content: "↗";
+  font-size: 0.9em;
+  color: var(--ink-soft);
+  transition: color 0.18s;
+}
+.hero-meta a:hover::after { color: var(--amber); }
+
+/* ── sections ── */
+section.region { padding: clamp(4rem, 9vw, 7rem) 0 3rem; }
+.region-label {
+  font-family: 'Geist Mono', monospace;
+  font-size: clamp(10px, 1.2vw, 11px);
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: clamp(2rem, 5vw, 3.5rem);
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+}
+.region-label::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--rule);
+}
+
+/* ── entries (experience, education) ── */
+.entry {
+  padding: 2.8rem 0;
+  border-bottom: 1px dashed var(--rule);
+}
+.entry:last-child { border-bottom: none; padding-bottom: 1rem; }
+.entry:first-child { padding-top: 0; }
+.entry-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+  flex-wrap: wrap;
+}
+.entry-title {
+  font-family: 'Geist', sans-serif;
+  font-weight: 600;
+  font-size: 1.1rem;
+  letter-spacing: -0.005em;
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+.entry-title::before {
+  content: "▸";
+  color: var(--amber);
+  font-size: 0.85em;
+  margin-top: 0.05em;
+}
+.entry-date {
+  font-family: 'Geist Mono', monospace;
+  font-size: 11px;
+  color: var(--ink-soft);
+  letter-spacing: 0.04em;
+}
+.entry-sub {
+  font-family: 'Geist Mono', monospace;
+  font-size: 12px;
+  color: var(--green);
+  margin-bottom: 1.2rem;
+  letter-spacing: 0.02em;
+  padding-left: 1.75rem;
+}
+.entry ul {
+  list-style: none;
+  padding-left: 1.75rem;
+  margin-top: 0.8rem;
+}
+.entry ul li {
+  position: relative;
+  margin-bottom: 0.6rem;
+  color: var(--ink-2);
+  font-size: 0.97rem;
+  line-height: 1.6;
+}
+.entry ul li::before {
+  content: "—";
+  position: absolute;
+  left: -1.6rem;
+  color: var(--ink-soft);
+}
+
+/* ── projects ── */
+.project {
+  padding: 2.8rem 0;
+  border-bottom: 1px dashed var(--rule);
+}
+.project:last-child { border-bottom: none; padding-bottom: 1rem; }
+.project:first-child { padding-top: 0; }
+.project-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+.project-title {
+  font-family: 'Geist', sans-serif;
+  font-weight: 600;
+  font-size: 1.1rem;
+  letter-spacing: -0.005em;
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+.project-title::before {
+  content: "◉";
+  color: var(--green);
+  font-size: 0.65em;
+  margin-top: 0.1em;
+}
+.project-links {
+  display: flex;
+  gap: 1.2rem;
+  font-family: 'Geist Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.project-links a {
+  color: var(--ink-soft);
+  text-decoration: none;
+  transition: color 0.18s;
+}
+.project-links a:hover { color: var(--amber); }
+.project p {
+  color: var(--ink-2);
+  font-size: 0.98rem;
+  line-height: 1.65;
+  max-width: 65ch;
+  margin-bottom: 1.2rem;
+  padding-left: 1.75rem;
+}
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  font-family: 'Geist Mono', monospace;
+  font-size: 10.5px;
+  letter-spacing: 0.06em;
+  color: var(--ink-soft);
+  padding-left: 1.75rem;
+}
+.badges span {
+  border: 1px solid var(--rule);
+  padding: 0.25rem 0.65rem;
+  border-radius: 2px;
+  background: var(--rule-soft);
+}
+
+/* ── stack grid — auto-fluid ── */
+.stack-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: clamp(1.5rem, 4vw, 2.5rem) clamp(1.5rem, 4vw, 3rem);
+  margin-top: 1rem;
+}
+.stack-group h4 {
+  font-family: 'Geist Mono', monospace;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: 1rem;
+}
+.stack-group ul { list-style: none; }
+.stack-group li {
+  color: var(--ink-2);
+  font-size: 0.97rem;
+  line-height: 1.95;
+  padding-left: 1.2rem;
+  position: relative;
+}
+.stack-group li::before {
+  content: "·";
+  position: absolute;
+  left: 0;
+  color: var(--ink-soft);
+}
+
+/* ── certification card ── */
+.cert {
+  border: 1px solid var(--rule);
+  background: var(--rule-soft);
+  padding: 1.8rem 2rem;
+  border-radius: 2px;
+  margin-bottom: 3rem;
+}
+.cert-name {
+  font-family: 'Geist', sans-serif;
+  font-weight: 600;
+  color: var(--ink);
+  font-size: 1.05rem;
+  margin-bottom: 0.35rem;
+  letter-spacing: -0.005em;
+}
+.cert-issuer {
+  font-family: 'Geist Mono', monospace;
+  font-size: 11px;
+  color: var(--ink-soft);
+  letter-spacing: 0.06em;
+  margin-bottom: 0.9rem;
+}
+.cert-link a {
+  color: var(--amber);
+  text-decoration: none;
+  font-family: 'Geist Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.cert-link a:hover { text-decoration: underline; }
+
+/* ── languages — auto-fluid ── */
+.lang-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: clamp(1rem, 2.5vw, 1.5rem);
+  margin-top: 1rem;
+}
+.lang {
+  border-left: 2px solid var(--amber);
+  padding: 0.6rem 0 0.6rem 1.1rem;
+}
+.lang-name {
+  font-family: 'Geist', sans-serif;
+  font-weight: 600;
+  font-size: 0.98rem;
+  color: var(--ink);
+  margin-bottom: 0.15rem;
+}
+.lang-level {
+  font-family: 'Geist Mono', monospace;
+  font-size: 10.5px;
+  color: var(--ink-soft);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* ── contact ── */
+.contact-prose {
+  color: var(--ink-2);
+  font-size: 1.1rem;
+  line-height: 1.55;
+  max-width: 50ch;
+  margin-bottom: 2.5rem;
+}
+
+/* ── footer ── */
+.site-footer {
+  margin-top: 7rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--rule);
+  font-family: 'Geist Mono', monospace;
+  font-size: 11px;
+  color: var(--ink-soft);
+  letter-spacing: 0.06em;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.site-footer a {
+  color: var(--ink-2);
+  text-decoration: none;
+  transition: color 0.18s;
+}
+.site-footer a:hover { color: var(--amber); }
+
+/* ── tablet & below: coords get closer in ── */
+@media (max-width: 900px) {
+  .coords-fixed { top: 1.5rem; right: 1.5rem; }
+}
+
+/* ── mobile: hide decorative coords, tighten content gutters ── */
+@media (max-width: 640px) {
+  .coords-fixed { display: none; }
+  .entry, .project { padding: 2rem 0; }
+  .entry-sub, .entry ul, .project p, .badges { padding-left: 1.4rem; }
+  .entry ul li::before { left: -1.25rem; }
+  .cert { padding: 1.4rem 1.5rem; }
+  .site-footer { flex-direction: column; gap: 0.5rem; align-items: flex-start; }
+  .theme-toggle {
+    bottom: 1rem;
+    right: 1rem;
+    padding: 0.55rem 0.8rem;
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 380px) {
+  .hero-meta { flex-direction: column; gap: 0.75rem; }
+}

@@ -1,0 +1,19 @@
+{{ if .Site.Params.experience.enable | default false }}
+<section class="region" id="experience">
+  <h2 class="region-label">Experience</h2>
+  {{ range .Site.Params.experience.items }}
+  <div class="entry">
+    <div class="entry-head">
+      <div class="entry-title">{{ with .companyUrl }}<a href="{{ . }}" target="_blank" rel="noopener" style="color: inherit; text-decoration: none;">{{ end }}{{ .company | default .title }}{{ with .companyUrl }}</a>{{ end }}</div>
+      <div class="entry-date">{{ .date }}</div>
+    </div>
+    {{ with .sub }}<div class="entry-sub">{{ . }}</div>{{ end }}
+    {{ with .bullets }}
+    <ul>
+      {{ range . }}<li>{{ . | safeHTML }}</li>{{ end }}
+    </ul>
+    {{ end }}
+  </div>
+  {{ end }}
+</section>
+{{ end }}

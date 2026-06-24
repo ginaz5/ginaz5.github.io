@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode | default "en" }}">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
+<meta name="description" content="{{ .Site.Params.description }}">
+<link rel="icon" href="{{ .Site.Params.favicon | default "/logo.svg" }}">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500&family=Geist:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<script>
+  (function() {
+    var stored = localStorage.getItem('theme');
+    var prefers = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    document.documentElement.setAttribute('data-theme', stored || prefers);
+  })();
+</script>
+
+{{ $css := resources.Get "css/field-atlas.css" | resources.Minify | resources.Fingerprint }}
+<link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
+
+{{ if .Site.GoogleAnalytics }}
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ .Site.GoogleAnalytics }}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', '{{ .Site.GoogleAnalytics }}');
+</script>
+{{ end }}
+
+{{ block "head" . }}{{ end }}
+</head>
+<body>
+
+{{ block "chrome" . }}
+{{ partial "rail.html" . }}
+{{ partial "coords.html" . }}
+{{ partial "theme-toggle.html" . }}
+{{ end }}
+
+{{ block "main" . }}{{ end }}
+
+<script>
+  // rail "you are here" tracking
+  (function() {
+    var sections = document.querySelectorAll('section[id]');
+    var railLinks = document.querySelectorAll('.rail a');
+    if (!sections.length || !railLinks.length || !('IntersectionObserver' in window)) return;
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting) {
+          var id = e.target.id;
+          railLinks.forEach(function(a) {
+            a.classList.toggle('active', a.getAttribute('href') === '#' + id);
+          });
+        }
+      });
+    }, { rootMargin: '-40% 0px -50% 0px' });
+    sections.forEach(function(s) { observer.observe(s); });
+  })();
+
+  // theme toggle
+  (function() {
+    var toggle = document.querySelector('.theme-toggle');
+    if (!toggle) return;
+    var glyph = toggle.querySelector('.glyph');
+    var label = toggle.querySelector('.theme-label');
+    function sync() {
+      var cur = document.documentElement.getAttribute('data-theme');
+      if (glyph) glyph.textContent = cur === 'dark' ? '◑' : '◐';
+      if (label) label.textContent = cur === 'dark' ? 'Light' : 'Dark';
+    }
+    sync();
+    toggle.addEventListener('click', function() {
+      var cur = document.documentElement.getAttribute('data-theme');
+      var next = cur === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      try { localStorage.setItem('theme', next); } catch(e) {}
+      sync();
+    });
+  })();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,11 @@
+<section class="region" id="contact">
+  <h2 class="region-label">Contact</h2>
+  <p class="contact-prose">{{ .Site.Params.contact.content | default "Open to backend, full-stack, or platform-team conversations. The fastest way to reach me is LinkedIn or email." | safeHTML }}</p>
+  <div class="hero-meta" style="border-top: none; padding-top: 0;">
+    {{ with .Site.Params.contact.email }}<a href="mailto:{{ . }}">Email</a>{{ end }}
+    {{ range .Site.Params.hero.socialLinks.fontAwesomeIcons }}
+      {{ if findRE "linkedin" .url }}<a href="{{ .url }}" target="_blank" rel="noopener">LinkedIn</a>{{ end }}
+      {{ if findRE "github" .url }}<a href="{{ .url }}" target="_blank" rel="noopener">GitHub</a>{{ end }}
+    {{ end }}
+  </div>
+</section>
