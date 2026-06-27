@@ -217,10 +217,10 @@ params:
     items:
       - title: "National Chung Cheng University"
         date: "2019.09 — 2021.10"
-        sub: "m.s. in information management"
+        sub: "M.S. in Information Management"
       - title: "Tamkang University"
         date: "2013.09 — 2017.06"
-        sub: "b.a. in russian language and literature"
+        sub: "B.A. in Russian Language and Literature"
         bullets:
           - 'Exchange: <a href="https://en.mpgu.su/home/" target="_blank" rel="noopener" style="color: inherit; text-decoration: underline; text-decoration-color: var(--rule);">Moscow State Pedagogical University</a> (2014–2015)'
 
@@ -247,7 +247,7 @@ params:
     certifications:
       - name: "AWS Certified Solutions Architect — Associate"
         issuer: "Amazon Web Services"
-        date: "2024"
+        date: "2026"
         url: "https://www.credly.com/badges/e2f01a47-fd8e-4958-ba0f-54ed84c85bfa/public_url"
     groups:
       - name: "Languages"
